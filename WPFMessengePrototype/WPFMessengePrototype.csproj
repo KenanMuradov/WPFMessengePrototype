@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1621736973_21-phonoteka_org-p-zadnii-fon-dlya-telegramma-22.jpg" />
+    <None Remove="1623936382_33-phonoteka_org-p-pattern-dlya-messendzhera-krasivo-33.png" />
+    <None Remove="background-chat-vk-75.jpg" />
+    <None Remove="microphone.png" />
+    <None Remove="send.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1623936382_33-phonoteka_org-p-pattern-dlya-messendzhera-krasivo-33.png" />
+    <Resource Include="Images\MainBackGround.jpg" />
+    <Resource Include="Images\microphone.png" />
+    <Resource Include="Images\send.png" />
+  </ItemGroup>
+
+</Project>
