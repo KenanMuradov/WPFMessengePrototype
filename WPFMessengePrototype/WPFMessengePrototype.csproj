@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.4.0" />
+    <PackageReference Include="NLipsum" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,20 +8,18 @@ namespace WPFMessengePrototype.Models;
 
 public class Message
 {
-    public string? Sender { get; set; }
+    public string? SenderName { get; set; }
     public string? Text { get; set; }
     public DateTime SendDate { get; set; }
-    public int AppearanceAlignment { get; set; }
 
 
     public Message() => SendDate = DateTime.Now;
 
-    public Message(string sender, string text, int appearanceAlignment = 1)
+    public Message(string senderName, string text)
         : this()
     {
-        Sender = sender;
+        SenderName = senderName;
         Text = text;
-        AppearanceAlignment = appearanceAlignment;
     }
 
 }

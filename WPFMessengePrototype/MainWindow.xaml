@@ -9,16 +9,47 @@
         Name="KepaMessengerWindow"
         Title="KepaMessenger" 
         Height="440" 
-        Width="350">
+        Width="350"
+        MinHeight="300"
+        MinWidth="250"
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="/1623936382_33-phonoteka_org-p-pattern-dlya-messendzhera-krasivo-33.png"/>
+    </Window.Background>
     <Grid>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
             <RowDefinition/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
 
-        <ListView Name="listViewMessages" ItemsSource="{Binding Messages}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Border Grid.RowSpan="2" CornerRadius="50,50,50,50">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding CompanionAvatar}"/>
+                </Border.Background>
+            </Border>
+
+            <TextBlock Text="{Binding CompanionName}" Margin="10 0 0 0" Foreground="FloralWhite" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="Online" Margin="10 0 0 0" Foreground="LightGreen" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            
+        </Grid>
+
+        <ListView Name="listViewMessages" BorderThickness="0" Grid.Row="1" ItemsSource="{Binding Messages}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
             <ListView.Background>
                 <ImageBrush ImageSource="/1623936382_33-phonoteka_org-p-pattern-dlya-messendzhera-krasivo-33.png" Stretch="UniformToFill"/>
             </ListView.Background>
@@ -72,13 +103,15 @@
         </ListView>
 
 
+        <Label Name="lblTyping" FontSize="20" Grid.Row="2" Foreground="FloralWhite" Visibility="Hidden">Typing...</Label>
+        
 
-        <DockPanel Grid.Row="1">
+        <DockPanel Background="WhiteSmoke" Grid.Row="3">
             <Button 
                 Width="40"
                 Height="40"
                 BorderThickness="0"
-                DockPanel.Dock="Left"
+                DockPanel.Dock="Left" Click="Button_Click"
                 >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/microphone.png" Stretch="UniformToFill"/>
